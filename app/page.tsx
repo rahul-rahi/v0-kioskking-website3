@@ -19,7 +19,22 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
-import { MapPin, Star, Users, TrendingUp, ChevronDown, Instagram, Check } from "lucide-react"
+import {
+  MapPin,
+  Star,
+  Users,
+  TrendingUp,
+  ChevronDown,
+  Instagram,
+  Check,
+  Crown,
+  Settings,
+  IndianRupee,
+  BadgeIndianRupee,
+  Clock3,
+  ShieldCheck,
+  Repeat
+} from "lucide-react"
 
 // Intersection Observer hook for animations
 function useInView(options = {}) {
@@ -56,24 +71,36 @@ function Header({ onOpenForm }: { onOpenForm: () => void }) {
   return (
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-background/95 backdrop-blur-md border-b border-border" : "bg-transparent"
+        scrolled ? "bg-black/80 backdrop-blur-xl border-b border-white/10 shadow-2xl": "bg-transparent"
       }`}
     >
       <div className="container mx-auto px-6 py-4 flex items-center justify-between">
-        <div className="text-2xl font-bold tracking-wider text-primary">
-          KIOSKKING
-        </div>
+      <div className="flex items-center">
+
+      <img
+
+        src="/KIOSKKINGLOGO.png"
+
+        alt="KIOSKKING"
+
+        className="h-16 md:h-20 w-auto transition-all duration-300"
+
+      />
+
+</div>
         <nav className="hidden md:flex items-center gap-8">
-          <a href="#experience" className="text-sm text-muted-foreground hover:text-primary transition-colors">Experience</a>
-          <a href="#menu" className="text-sm text-muted-foreground hover:text-primary transition-colors">Menu</a>
-          <a href="#why-us" className="text-sm text-muted-foreground hover:text-primary transition-colors">Partner</a>
-          <a href="#locations" className="text-sm text-muted-foreground hover:text-primary transition-colors">Locations</a>
-        </nav>
+          <a href="#about" className="text-sm font-medium tracking-wide text-white/80 hover:text-primary transition-all duration-300">About Us</a>
+          <a href="#whyinvest" className="text-sm font-medium tracking-wide text-white/80 hover:text-primary transition-all duration-300">Why Invest</a>
+          <a href="#businessmodel" className="text-sm font-medium tracking-wide text-white/80 hover:text-primary transition-all duration-300">Business Model</a>
+          <a href="#roi" className="text-sm font-medium tracking-wide text-white/80 hover:text-primary transition-all duration-300">ROI & Investment</a>
+          <a href="#locations" className="text-sm font-medium tracking-wide text-white/80 hover:text-primary transition-all duration-300">Growth Plan</a>
+          <a href="#locations" className="text-sm font-medium tracking-wide text-white/80 hover:text-primary transition-all duration-300">Support</a>
+          </nav>
         <Button 
           onClick={onOpenForm}
           className="bg-primary text-primary-foreground hover:bg-primary/90 animate-pulse-glow"
         >
-          Start Your KIOSKKING
+          Become a Franchise Partner
         </Button>
       </div>
     </header>
@@ -99,12 +126,12 @@ function HeroSection({ onOpenForm }: { onOpenForm: () => void }) {
       {/* Content */}
       <div className="relative z-10 container mx-auto px-6 text-center">
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 opacity-0 animate-fade-in-up text-balance">
-          <span className="text-primary">Bold Flavors.</span>
+          <span className="text-primary">Building India's Next Premium</span>
           <br />
-          <span className="text-foreground">Elevated Street Experience.</span>
+          <span className="text-foreground">Street Food Franchise Network</span>
         </h1>
         <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 opacity-0 animate-fade-in-up delay-200 text-pretty">
-          KIOSKKING is where street food meets premium experience — crafted drinks, gourmet bites, and a vibe you don&apos;t forget.
+          Launch your own KIOSKKING outlet with a proven business model, high-margin products, premium branding, and complete operational support.
         </p>
         <Button 
           onClick={onOpenForm}
@@ -123,15 +150,170 @@ function HeroSection({ onOpenForm }: { onOpenForm: () => void }) {
   )
 }
 
+
+function AboutSection() {
+
+  const { ref, isInView } = useInView()
+
+  const pillars = [
+
+    "Premium Branding",
+
+    "High Margin Menu",
+
+    "Technology Enabled",
+
+    "Standardized SOPs",
+
+    "Scalable Format",
+
+    "Centralized Marketing"
+
+  ]
+  return (
+    <section
+      id="about"
+      ref={ref}
+      className="py-28 bg-secondary/10"
+    >
+      <div className="container mx-auto px-6">
+
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+
+          {/* Left Content */}
+
+          <div
+            className={`transition-all duration-700 ${
+              isInView
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-10"
+            }`}
+          >
+
+            <span className="text-primary uppercase tracking-[0.3em] text-sm">
+              About KIOSKKING
+            </span>
+
+            <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-8">
+              Building India's Most Loved Premium Street Food Brand
+            </h2>
+
+            <p className="text-muted-foreground text-lg leading-relaxed mb-6">
+              KIOSKKING was founded with a simple vision:
+              transform India's street-food culture into a
+              modern, premium and scalable business model.
+            </p>
+
+            <p className="text-muted-foreground text-lg leading-relaxed mb-6">
+              By combining trending products, standardized
+              operations, technology-enabled management and
+              strong branding, we are creating a franchise
+              opportunity built for long-term growth.
+            </p>
+
+            <p className="text-muted-foreground text-lg leading-relaxed">
+              Our goal is to empower entrepreneurs across
+              India with a business model that is affordable,
+              profitable and scalable.
+            </p>
+
+          </div>
+
+          {/* Right Side */}
+
+          <div
+  className={`transition-all duration-700 delay-200 ${
+    isInView
+      ? "opacity-100 translate-y-0"
+      : "opacity-0 translate-y-10"
+  }`}
+>
+  <div className="relative h-[550px] rounded-3xl overflow-hidden border border-primary/20">
+
+    <Image
+      src="/FounderImage.jpeg"
+      alt="Founder KIOSKKING"
+      fill
+      className="object-cover"
+    />
+
+    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
+
+    <div className="absolute bottom-0 left-0 p-8">
+
+      <div className="text-primary text-sm uppercase tracking-[0.3em] mb-2">
+        Founder
+      </div>
+
+      <h3 className="text-3xl font-bold text-white">
+        Arjun Singh Chamyal
+      </h3>
+
+      <p className="text-white/80 mt-2">
+        Founder & CEO, KIOSKKING
+      </p>
+
+    </div>
+
+  </div>
+</div>
+
+        </div>
+      </div>
+      <div className="container mx-auto px-6">
+
+        <div className="flex flex-wrap gap-4 mt-10">
+
+          {pillars.map((pillar) => (
+
+            <div
+
+              key={pillar}
+
+              className="px-5 py-3 rounded-full border border-primary/30 bg-card/50"
+
+            >
+
+              {pillar}
+
+            </div>
+
+          ))}
+
+        </div>
+
+      </div>
+      
+    </section>
+  )
+}
+
+
 // Trust/Numbers Section
 function TrustSection() {
   const { ref, isInView } = useInView()
   
   const stats = [
-    { icon: Users, value: "10,000+", label: "Customers Served" },
-    { icon: MapPin, value: "5+", label: "Active Locations" },
-    { icon: Star, value: "4.7★", label: "Customer Rating" },
-    { icon: TrendingUp, value: "Growing", label: "Franchise Network" },
+    {
+      icon: Users,
+      value: "10,000+",
+      label: "Orders Served"
+    },
+    {
+      icon: IndianRupee,
+      value: "65%+",
+      label: "Gross Margin"
+    },
+    {
+      icon: Clock3,
+      value: "18 Months",
+      label: "Average Payback"
+    },
+    {
+      icon: ShieldCheck,
+      value: "100%",
+      label: "Standardized SOPs"
+    }
   ]
 
   return (
@@ -158,171 +340,310 @@ function TrustSection() {
   )
 }
 
-// Experience Section
-function ExperienceSection() {
+// WhyInvestSection Section
+function WhyInvestSection() {
   const { ref, isInView } = useInView()
-
+  const businessModel = [
+    {
+      icon: Crown,
+      title: "Premium Product Mix",
+      metric: "12+ Products",
+      description:
+        "A carefully curated menu designed to maximize customer demand and profitability."
+    },
+    {
+      icon: Settings,
+      title: "Low Operational Complexity",
+      metric: "2–3 Staff",
+      description:
+        "Simple preparation processes require minimal infrastructure and manpower."
+    },
+    {
+      icon: IndianRupee,
+      title: "Multiple Revenue Streams",
+      metric: "6+ Categories",
+      description:
+        "Generate revenue from beverages, snacks, combos, add-ons and seasonal offerings."
+    },
+    {
+      icon: Repeat,
+      title: "Strong Repeat Customers",
+      metric: "High Retention",
+      description:
+        "Trend-driven products and premium experiences encourage repeat visits."
+    }
+  ]
   return (
-    <section id="experience" ref={ref} className="py-24">
+    <section id="whyinvest" ref={ref} className="py-24 scroll-mt-32">
       <div className="container mx-auto px-6">
-        <h2 className={`text-3xl md:text-4xl font-bold text-center mb-6 text-primary transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          The KIOSKKING Experience
+
+        <h2
+          className={`text-3xl md:text-4xl font-bold text-center mb-6 text-primary transition-all duration-700 ${
+            isInView
+              ? "opacity-100 translate-y-0"
+              : "opacity-0 translate-y-10"
+          }`}
+        >
+          Built for Profitable Franchise Growth
         </h2>
-        <p className={`text-center text-muted-foreground mb-16 max-w-xl mx-auto transition-all duration-700 delay-100 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          Where every bite tells a story. Where every sip creates a memory.
+
+        <p
+          className={`text-center text-muted-foreground mb-16 max-w-xl mx-auto transition-all duration-700 delay-100 ${
+            isInView
+              ? "opacity-100 translate-y-0"
+              : "opacity-0 translate-y-10"
+          }`}
+        >
+          Every aspect of the KIOSKKING model is engineered to balance profitability, operational efficiency, and long-term scalability.
         </p>
-        
-        <div className="grid md:grid-cols-2 gap-8">
-          <div className={`relative aspect-[4/3] rounded-lg overflow-hidden transition-all duration-700 ${isInView ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
-            <Image
-              src="/images/kiosk-experience.jpg"
-              alt="KIOSKKING Experience"
-              fill
-              className="object-cover hover:scale-105 transition-transform duration-500"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
-            <div className="absolute bottom-6 left-6">
-              <span className="text-sm text-primary font-medium">Premium Atmosphere</span>
-            </div>
-          </div>
-          <div className="grid grid-cols-2 gap-4">
-            <div className={`relative aspect-square rounded-lg overflow-hidden transition-all duration-700 delay-200 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-              <Image
-                src="/images/blue-lagoon.jpg"
-                alt="Blue Lagoon Mocktail"
-                fill
-                sizes="(max-width: 768px) 50vw, 25vw"
-                className="object-cover object-center hover:scale-105 transition-transform duration-500"
-              />
-            </div>
-            <div className={`relative aspect-square rounded-lg overflow-hidden transition-all duration-700 delay-300 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-              <Image
-                src="/images/veg-momos.jpg"
-                alt="Veg Momos"
-                fill
-                sizes="(max-width: 768px) 50vw, 25vw"
-                className="object-cover object-center hover:scale-105 transition-transform duration-500"
-              />
-            </div>
-            <div className={`relative aspect-square rounded-lg overflow-hidden transition-all duration-700 delay-400 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-              <Image
-                src="/images/peri-peri-fries.jpg"
-                alt="Peri Peri Fries"
-                fill
-                sizes="(max-width: 768px) 50vw, 25vw"
-                className="object-cover object-center hover:scale-105 transition-transform duration-500"
-              />
-            </div>
-            <div className={`relative aspect-square rounded-lg overflow-hidden transition-all duration-700 delay-500 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-              <Image
-                src="/images/paneer-burger.jpg"
-                alt="Paneer Burger"
-                fill
-                sizes="(max-width: 768px) 50vw, 25vw"
-                className="object-cover object-center hover:scale-105 transition-transform duration-500"
-              />
-            </div>
-          </div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+  {businessModel.map((item, index) => {
+    const Icon = item.icon
+
+    return (
+      <div
+        key={item.title}
+        className="
+        bg-card/70
+        backdrop-blur-xl
+        border
+        border-primary/20
+        rounded-2xl
+        p-8
+        hover:border-primary/50
+        hover:-translate-y-2
+        transition-all
+        duration-300
+        "
+      >
+        <Icon className="w-10 h-10 text-primary mb-5" />
+
+        <h3 className="text-xl font-bold text-primary mb-2">
+          {item.title}
+        </h3>
+
+        <div className="text-2xl font-bold text-foreground mb-3">
+          {item.metric}
         </div>
+
+        <p className="text-muted-foreground text-sm">
+          {item.description}
+        </p>
+      </div>
+    )
+  })}
+
+</div>
+
       </div>
     </section>
   )
 }
-
-// Menu Section
-function MenuSection() {
+// BusinessModel Section
+function BusinessModel() {
   const { ref, isInView } = useInView()
 
-  const menuCategories = [
-    {
-      name: "Mocktails",
-      image: "/images/blue-lagoon.jpg",
-      items: ["Blue Lagoon", "Virgin Mojito", "Sunset Cooler", "Mango Tango"],
-      signature: "Blue Lagoon"
-    },
-    {
-      name: "Cold Coffee",
-      image: "/images/gallery-1.jpg",
-      items: ["Classic Cold Coffee", "Hazelnut Frappe", "Caramel Latte", "Mocha Blast"],
-      signature: "Mocha Blast"
-    },
-    {
-      name: "Shakes",
-      image: "/images/gallery-2.jpg",
-      items: ["Oreo Shake", "Belgian Chocolate", "Strawberry Dream", "Nutella Special"],
-      signature: "Nutella Special"
-    },
-    {
-      name: "Momos",
-      image: "/images/veg-momos.jpg",
-      items: ["Veg Momos", "Paneer Momos", "Tandoori Momos", "Fried Momos"],
-      signature: "Veg Momos"
-    },
-    {
-      name: "Burgers",
-      image: "/images/paneer-burger.jpg",
-      items: ["Paneer Burger", "Aloo Tikki Burger", "Cheese Loaded Burger", "Veggie Supreme"],
-      signature: "Paneer Burger"
-    },
-    {
-      name: "Fries",
-      image: "/images/peri-peri-fries.jpg",
-      items: ["Peri Peri Fries", "Cheese Fries", "Classic Salted", "Loaded Nachos Fries"],
-      signature: "Peri Peri Fries"
-    },
+  const revenueDrivers = [
+
+      {
+        title: "Boba Drinks",
+        image: "/images/Boba.jpeg",
+        metric: "High Customer Demand",
+        description: "Premium beverages with strong margins and repeat purchases."
+      },
+      {
+        title: "Cold Coffee",
+        image: "/images/gallery-1.jpg",
+        metric: "High Margin",
+        description: "High-demand beverage category with consistent daily sales."
+      },
+      {
+        title: "Shakes",
+        image: "/images/gallery-2.jpg",
+        metric: "Popular Upsell",
+        description: "Popular among young customers and ideal for upselling."
+      },
+      {
+        title: "Momos",
+        image: "/images/Momos.jpeg",
+        metric: "High Repeat Purchase",
+        description: "One of the strongest repeat-order categories."
+      },
+      {
+        title: "Burgers",
+        image: "/images/paneer-burger.jpg",
+        metric: "Popular Add-On",
+        description: "Increases average order value and combo sales."
+      },
+      {
+        title: "Combos",
+        image: "/images/peri-peri-fries.jpg",
+        metric: "Highest Ticket Size",
+        description: "Drives higher customer spending and profitability."
+      }
   ]
 
   return (
-    <section id="menu" ref={ref} className="py-24 bg-secondary/20">
+    <section id="businessmodel" ref={ref} className="py-24 scroll-mt-32">
       <div className="container mx-auto px-6">
         <h2 className={`text-3xl md:text-4xl font-bold text-center mb-6 text-primary transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          Our Menu
+        Revenue Drivers That Power Every KIOSKKING Outlet
         </h2>
         <p className={`text-center text-muted-foreground mb-16 max-w-xl mx-auto transition-all duration-700 delay-100 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          Curated with passion. Crafted with perfection.
+          Our product portfolio is designed to maximize profitability, encourage repeat purchases, and create a scalable franchise business model.
+        </p>
+        <div className="mt-16">
+
+  
+
+</div>
+        <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
+  {revenueDrivers.map((driver, index) => (
+    <div
+      key={driver.title}
+      className={`bg-card/70 backdrop-blur-xl border border-primary/20 rounded-2xl overflow-hidden hover:border-primary/50 hover:-translate-y-2 transition-all duration-500 flex flex-col h-full ${
+        isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+      }`}
+      style={{ transitionDelay: `${index * 100}ms` }}
+    >
+      {/* Image */}
+      <div className="relative h-56 overflow-hidden">
+        <Image
+          src={driver.image}
+          alt={driver.title}
+          fill
+          className="object-cover hover:scale-105 transition-transform duration-500"
+        />
+
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent" />
+
+        <h3 className="absolute bottom-4 left-4 text-xl font-bold text-primary">
+          {driver.title}
+        </h3>
+      </div>
+
+      {/* Revenue Metric */}
+      <div className="p-6 flex flex-col flex-1">
+
+      <div className="mb-4">
+
+      <div className="text-2xl md:text-3xl font-bold text-primary min-h-[70px] flex items-center">  
+      {driver.metric}
+      </div>
+
+      </div>
+
+      <p className="text-muted-foreground leading-relaxed flex-1">
+          {driver.description}
         </p>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {menuCategories.map((category, catIndex) => (
-            <div 
-              key={category.name}
-              className={`bg-card border border-border rounded-xl overflow-hidden hover:border-primary/50 transition-all duration-500 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
-              style={{ transitionDelay: `${catIndex * 100}ms` }}
-            >
-              {/* Category Image */}
-              <div className="relative aspect-[16/10] overflow-hidden">
-                <Image
-                  src={category.image}
-                  alt={category.name}
-                  fill
-                  className="object-cover hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-card via-card/40 to-transparent" />
-                <h3 className="absolute bottom-4 left-4 text-xl font-bold text-primary">{category.name}</h3>
-              </div>
-              
-              {/* Menu Items */}
-              <div className="p-5">
-                <ul className="space-y-2">
-                  {category.items.map((item) => (
-                    <li key={item} className="flex items-center justify-between text-sm">
-                      <span className="text-foreground">{item}</span>
-                      {item === category.signature && (
-                        <span className="text-xs px-2 py-0.5 rounded bg-primary/20 text-primary">
-                          Signature
-                        </span>
-                      )}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          ))}
-        </div>
+      </div>
+    </div>
+  ))}
+</div>
+
       </div>
     </section>
   )
 }
+
+function ROISection()
+{
+  const { ref, isInView } = useInView()
+
+  return (
+    <section id="roi" ref={ref} className="py-24 scroll-mt-32">
+      <div className="container mx-auto px-6 text-center">
+        <h2 className={`text-3xl md:text-4xl font-bold mb-6 text-primary transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          Attractive ROI with Scalable Growth Potential
+        </h2>
+        <p className={`text-muted-foreground mb-10 max-w-xl mx-auto transition-all duration-700 delay-100 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          With a starting investment of ₹8–15L and an average payback period of 18–24 months, KIOSKKING offers a compelling opportunity for entrepreneurs seeking a profitable and scalable franchise business.
+        </p>
+        
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
+
+  <div className="bg-card/70 backdrop-blur-xl border border-primary/20 rounded-2xl p-6 hover:border-primary/50 transition-all duration-300">
+    <div className="text-primary text-3xl font-bold mb-3">
+      ₹8–15L
+    </div>
+
+    <h3 className="font-semibold mb-2">
+      Investment Range
+    </h3>
+
+    <p className="text-muted-foreground text-sm">
+      Flexible entry point depending on outlet format and location.
+    </p>
+  </div>
+
+  <div className="bg-card/70 backdrop-blur-xl border border-primary/20 rounded-2xl p-6 hover:border-primary/50 transition-all duration-300">
+    <div className="text-primary text-3xl font-bold mb-3">
+      18–24
+    </div>
+
+    <h3 className="font-semibold mb-2">
+      Months Payback
+    </h3>
+
+    <p className="text-muted-foreground text-sm">
+      Expected investment recovery period under standard operating conditions.
+    </p>
+  </div>
+
+  <div className="bg-card/70 backdrop-blur-xl border border-primary/20 rounded-2xl p-6 hover:border-primary/50 transition-all duration-300">
+    <div className="text-primary text-3xl font-bold mb-3">
+      High
+    </div>
+
+    <h3 className="font-semibold mb-2">
+      Gross Margin
+    </h3>
+
+    <p className="text-muted-foreground text-sm">
+      High-margin categories designed for profitability and repeat purchases.
+    </p>
+  </div>
+
+  <div className="bg-card/70 backdrop-blur-xl border border-primary/20 rounded-2xl p-6 hover:border-primary/50 transition-all duration-300">
+    <div className="text-primary text-3xl font-bold mb-3">
+      100%
+    </div>
+
+    <h3 className="font-semibold mb-2">
+      Operational Support
+    </h3>
+
+    <p className="text-muted-foreground text-sm">
+      Training, SOPs, marketing guidance, and technology support included.
+    </p>
+  </div>
+
+</div>
+
+<div className="mt-16 max-w-4xl mx-auto">
+  <div className="bg-card/50 border border-primary/20 rounded-2xl p-8">
+
+    <h3 className="text-2xl font-bold text-primary mb-4">
+      Why the Numbers Matter
+    </h3>
+
+    <p className="text-muted-foreground leading-relaxed">
+      KIOSKKING combines a relatively low investment requirement with
+      high-margin product categories, operational simplicity, and strong
+      repeat-customer potential. This creates a business model designed
+      for sustainable profitability and long-term franchise growth.
+    </p>
+
+  </div>
+</div>
+      </div>
+    </section>
+  )
+}
+
 
 // Why KIOSKKING Section
 function WhySection({ onOpenForm }: { onOpenForm: () => void }) {
@@ -330,20 +651,28 @@ function WhySection({ onOpenForm }: { onOpenForm: () => void }) {
 
   const reasons = [
     {
-      title: "Premium Brand Positioning",
-      description: "Stand out with a brand that exudes quality and sophistication in every detail."
+      title: "Proven Product Market Fit",
+      description: "Stand out with a brand that exudes quality and sophistication in every detail. Already validated."
     },
     {
-      title: "High-Demand Products",
+      title: "High Margin Menu",
       description: "Our menu features trending items that customers actively seek and love."
     },
     {
-      title: "Simple Operations Model",
-      description: "Streamlined processes designed for efficiency without compromising quality."
+      title: "Technology Enabled",
+      description: "Streamlined processes designed for efficiency without compromising quality using POS + Analytics."
     },
     {
-      title: "Strong Customer Appeal",
-      description: "A concept that resonates with the modern, quality-conscious consumer."
+      title: "Scalable Format",
+      description: "A concept that resonates with the modern Kiosk or Café."
+    },
+    {
+      title: "Low Investment",
+      description: "A concept that is cheaper as compared to cafes."
+    },
+    {
+      title: "Centralized Branding",
+      description: "Professional marketing."
     },
   ]
 
@@ -351,7 +680,7 @@ function WhySection({ onOpenForm }: { onOpenForm: () => void }) {
     <section id="why-us" ref={ref} className="py-24">
       <div className="container mx-auto px-6">
         <h2 className={`text-3xl md:text-4xl font-bold text-center mb-6 text-primary transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          Why Partner With KIOSKKING
+        Why Investors Choose KIOSKKING
         </h2>
         <p className={`text-center text-muted-foreground mb-16 max-w-xl mx-auto transition-all duration-700 delay-100 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           Join a brand that&apos;s redefining street food culture.
@@ -377,7 +706,7 @@ function WhySection({ onOpenForm }: { onOpenForm: () => void }) {
             size="lg"
             className="bg-primary text-primary-foreground hover:bg-primary/90"
           >
-            Become a Partner
+            Become a Franchise Partner
           </Button>
         </div>
       </div>
@@ -393,14 +722,54 @@ function FounderSection() {
     <section ref={ref} className="py-24 bg-secondary/20">
       <div className="container mx-auto px-6 max-w-3xl text-center">
         <h2 className={`text-3xl md:text-4xl font-bold mb-10 text-primary transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          From the Founder
+        Our Mission & Vision
         </h2>
         <blockquote className={`text-xl md:text-2xl text-foreground leading-relaxed italic transition-all duration-700 delay-200 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          &ldquo;KIOSKKING was built to transform everyday street food into a premium experience — combining quality, presentation, and atmosphere. We don&apos;t just serve food; we create moments that people remember.&rdquo;
+          &ldquo;KIOSKKING was built to transform India's most loved premium street food chain, starting from Uttarakhand and expanding nationwide through passionate franchise partners.&rdquo;
         </blockquote>
-        <div className={`mt-8 text-primary font-semibold transition-all duration-700 delay-300 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          — Founder, KIOSKKING
-        </div>
+        <div
+  className={`mt-12 grid md:grid-cols-3 gap-6 transition-all duration-700 delay-300 ${
+    isInView
+      ? "opacity-100 translate-y-0"
+      : "opacity-0 translate-y-10"
+  }`}
+>
+
+  <div className="bg-card/50 border border-primary/20 rounded-xl p-6">
+    <div className="text-primary text-sm mb-2">
+      Founded
+    </div>
+
+    <div className="text-2xl font-bold">
+      2025
+    </div>
+  </div>
+
+  <div className="bg-card/50 border border-primary/20 rounded-xl p-6">
+    <div className="text-primary text-sm mb-2">
+      Headquarters
+    </div>
+
+    <div className="text-laege font-bold">
+      Haldwani (Hydle Gate, Kathgodam, Nainital, Uttarakhand 263126)
+    </div>
+  </div>
+
+  <div className="bg-card/50 border border-primary/20 rounded-xl p-6">
+    <div className="text-primary text-sm mb-2">
+      Vision
+    </div>
+
+    <div className="text-2xl font-bold">
+      100 Outlets
+    </div>
+
+    <div className="text-muted-foreground text-sm">
+      By 2030
+    </div>
+  </div>
+
+</div>
       </div>
     </section>
   )
@@ -410,41 +779,52 @@ function FounderSection() {
 function TestimonialsSection() {
   const { ref, isInView } = useInView()
 
-  const testimonials = [
+  const successStories = [
     {
-      quote: "The Blue Lagoon is absolutely divine! This place has the perfect vibe for hangouts.",
-      author: "Priya S."
+      metric: "3,000+",
+      title: "Monthly Customers",
+      description:
+        "Strong customer demand and repeat visits continue to drive growth at our flagship outlet."
     },
     {
-      quote: "Best momos I've ever had. The presentation makes it feel so premium!",
-      author: "Rahul M."
+      metric: "4.7★",
+      title: "Customer Rating",
+      description:
+        "Consistently positive customer feedback reinforces the strength of the KIOSKKING brand."
     },
     {
-      quote: "Finally, street food that looks as good as it tastes. Highly recommend!",
-      author: "Ananya K."
-    },
+      metric: "100%",
+      title: "Scalable Model",
+      description:
+        "Designed with standardized operations that can be replicated across multiple locations."
+    }
   ]
 
   return (
     <section ref={ref} className="py-24">
       <div className="container mx-auto px-6">
         <h2 className={`text-3xl md:text-4xl font-bold text-center mb-16 text-primary transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          Loved by Our Customers
+        Success Stories
         </h2>
         <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-          {testimonials.map((testimonial, index) => (
+          {successStories.map((successStories, index) => (
             <div 
-              key={testimonial.author}
+              key={successStories.title}
               className={`bg-card border border-border rounded-lg p-8 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
               style={{ transitionDelay: `${index * 100}ms` }}
             >
-              <div className="flex gap-1 mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 text-primary fill-primary" />
-                ))}
-              </div>
-              <p className="text-foreground mb-6 italic">&ldquo;{testimonial.quote}&rdquo;</p>
-              <p className="text-sm text-muted-foreground">— {testimonial.author}</p>
+              
+              <div className="text-4xl font-bold text-primary mb-4">
+  {successStories.metric}
+</div>
+
+<h3 className="text-xl font-semibold text-foreground mb-3">
+  {successStories.title}
+</h3>
+
+<p className="text-muted-foreground">
+  {successStories.description}
+</p>
             </div>
           ))}
         </div>
@@ -458,74 +838,76 @@ function LocationSection() {
   const { ref, isInView } = useInView()
 
   return (
-    <section id="locations" ref={ref} className="py-24 bg-secondary/20">
+    <section id="locations" ref={ref} className="py-24 scroll-mt-32">
       <div className="container mx-auto px-6 text-center">
         <h2 className={`text-3xl md:text-4xl font-bold mb-6 text-primary transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          Our Presence
+         Expansion Roadmap
         </h2>
         <p className={`text-muted-foreground mb-10 transition-all duration-700 delay-100 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          Currently serving happiness in select locations
+        Our expansion strategy is focused on building a strong regional presence before scaling nationwide through franchise partnerships.
         </p>
         
-        <div className={`inline-flex items-center gap-3 bg-card border border-border rounded-full px-8 py-4 transition-all duration-700 delay-200 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <MapPin className="w-5 h-5 text-primary" />
-          <span className="text-foreground font-medium">Delhi NCR Region</span>
-        </div>
-        
-        <p className={`mt-8 text-primary font-semibold transition-all duration-700 delay-300 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          Expanding Soon to New Cities
-        </p>
+        <div className="grid md:grid-cols-4 gap-6 mt-12"><div className="bg-card/70 border border-primary/20 rounded-2xl p-6">
+  <div className="text-primary text-2xl font-bold mb-3">
+    2026
+  </div>
+
+  <h3 className="font-semibold mb-2">
+    Foundation Phase
+  </h3>
+
+  <p className="text-muted-foreground text-sm">
+    Strengthen operations and brand presence in Haldwani.
+  </p>
+</div>
+
+<div className="bg-card/70 border border-primary/20 rounded-2xl p-6">
+  <div className="text-primary text-2xl font-bold mb-3">
+    2027
+  </div>
+
+  <h3 className="font-semibold mb-2">
+    Regional Expansion
+  </h3>
+
+  <p className="text-muted-foreground text-sm">
+    Launch new outlets in Nainital and Kaichi Dham.
+  </p>
+</div>
+
+<div className="bg-card/70 border border-primary/20 rounded-2xl p-6">
+  <div className="text-primary text-2xl font-bold mb-3">
+    2028
+  </div>
+
+  <h3 className="font-semibold mb-2">
+    Metro Entry
+  </h3>
+
+  <p className="text-muted-foreground text-sm">
+    Expand into Delhi NCR and other high-potential markets.
+  </p>
+</div>
+
+<div className="bg-card/70 border border-primary/20 rounded-2xl p-6">
+  <div className="text-primary text-2xl font-bold mb-3">
+    2030
+  </div>
+
+  <h3 className="font-semibold mb-2">
+    National Growth
+  </h3>
+
+  <p className="text-muted-foreground text-sm">
+    Target 100 outlets across India through franchise partnerships.
+  </p>
+</div>
+</div>
       </div>
     </section>
   )
 }
 
-// Gallery Section
-function GallerySection() {
-  const { ref, isInView } = useInView()
-
-  const images = [
-    "/images/kiosk-hero.jpg",
-    "/images/blue-lagoon.jpg",
-    "/images/veg-momos.jpg",
-    "/images/peri-peri-fries.jpg",
-    "/images/paneer-burger.jpg",
-    "/images/kiosk-experience.jpg",
-    "/images/gallery-1.jpg",
-    "/images/gallery-2.jpg",
-  ]
-
-  return (
-    <section ref={ref} className="py-24">
-      <div className="container mx-auto px-6">
-        <div className="flex items-center justify-center gap-3 mb-12">
-          <Instagram className={`w-6 h-6 text-primary transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`} />
-          <h2 className={`text-2xl font-bold text-foreground transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-            @kioskking
-          </h2>
-        </div>
-        
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          {images.map((image, index) => (
-            <div 
-              key={image}
-              className={`relative aspect-square rounded-lg overflow-hidden group transition-all duration-700 ${isInView ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}
-              style={{ transitionDelay: `${index * 50}ms` }}
-            >
-              <Image
-                src={image}
-                alt={`KIOSKKING Gallery ${index + 1}`}
-                fill
-                className="object-cover group-hover:scale-110 transition-transform duration-500"
-              />
-              <div className="absolute inset-0 bg-background/0 group-hover:bg-background/30 transition-colors duration-300" />
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  )
-}
 
 // Footer
 function Footer({ onOpenForm }: { onOpenForm: () => void }) {
@@ -536,7 +918,7 @@ function Footer({ onOpenForm }: { onOpenForm: () => void }) {
           KIOSKKING
         </div>
         <p className="text-muted-foreground mb-8 max-w-md mx-auto">
-          Bold Flavors. Elevated Street Experience.
+        Building India's Next Premium Street Food Franchise Network.
         </p>
         <Button 
           onClick={onOpenForm}
@@ -586,7 +968,7 @@ function FranchiseFormModal({ open, onOpenChange }: { open: boolean; onOpenChang
         setFormData({ name: "", phone: "", city: "", investmentRange: "" })
       }
     } catch (error) {
-      console.error("[v0] Error submitting form:", error)
+      console.error("[KIOSKKING] Error submitting form:", error)
     } finally {
       setIsSubmitting(false)
     }
@@ -699,14 +1081,15 @@ export default function KioskKingPage() {
     <main className="min-h-screen bg-background">
       <Header onOpenForm={() => setFormOpen(true)} />
       <HeroSection onOpenForm={() => setFormOpen(true)} />
+      <AboutSection />
       <TrustSection />
-      <ExperienceSection />
-      <MenuSection />
+      <WhyInvestSection />
+      <BusinessModel />
+      <ROISection />
       <WhySection onOpenForm={() => setFormOpen(true)} />
       <FounderSection />
       <TestimonialsSection />
       <LocationSection />
-      <GallerySection />
       <Footer onOpenForm={() => setFormOpen(true)} />
       <FranchiseFormModal open={formOpen} onOpenChange={setFormOpen} />
     </main>

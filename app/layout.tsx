@@ -17,23 +17,9 @@ export const metadata: Metadata = {
   title: 'KIOSKKING - Bold Flavors. Elevated Street Experience.',
   description: 'KIOSKKING is where street food meets premium experience — crafted drinks, gourmet bites, and a vibe you don\'t forget. Start your KIOSKKING franchise today.',
   keywords: ['street food', 'franchise', 'KIOSKKING', 'premium food', 'mocktails', 'momos', 'burgers'],
-  generator: 'v0.app',
   icons: {
-    icon: [
-      {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
-    ],
-    apple: '/apple-icon.png',
+    icon: '/KIOSKKINGLOGO.png',
+    apple: '/apple-touch-icon.png',
   },
 }
 
