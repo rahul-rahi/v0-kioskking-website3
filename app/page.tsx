@@ -1051,8 +1051,7 @@ function FranchiseFormModal({ open, onOpenChange }: { open: boolean; onOpenChang
                   <SelectValue placeholder="Select investment range" />
                 </SelectTrigger>
                 <SelectContent className="bg-popover border-border">
-                  <SelectItem value="5-10L">₹5 - 10 Lakhs</SelectItem>
-                  <SelectItem value="10-15L">₹10 - 15 Lakhs</SelectItem>
+                  <SelectItem value="8-15L">₹8 - 15 Lakhs</SelectItem>
                   <SelectItem value="15-25L">₹15 - 25 Lakhs</SelectItem>
                   <SelectItem value="25L+">₹25 Lakhs+</SelectItem>
                 </SelectContent>
